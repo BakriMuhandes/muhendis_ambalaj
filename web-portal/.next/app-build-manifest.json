@@ -1,0 +1,70 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/_not-found/page-d59d0d448e7e8962.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/css/d1aae4a6dfcdb05e.css",
+      "static/chunks/app/layout-3fc36432a408caf0.js"
+    ],
+    "/giris/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/giris/page-77f0222744a463fb.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/page-845ee5e5fb2101e8.js"
+    ],
+    "/panel/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/panel/page-333ea38d40102d7b.js"
+    ],
+    "/panel/layout": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/448-74a30f2b5899bfff.js",
+      "static/chunks/app/panel/layout-03f1aeca09341858.js"
+    ],
+    "/panel/odemeler/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/panel/odemeler/page-1d9495b5b287de6a.js"
+    ],
+    "/panel/raporlar/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/799-0754269560b5c9e5.js",
+      "static/chunks/app/panel/raporlar/page-2b8590268215c4f3.js"
+    ],
+    "/panel/teslimatlar/page": [
+      "static/chunks/webpack-d757b501b8c835e1.js",
+      "static/chunks/fd9d1056-a47fc9fd85a9bc9b.js",
+      "static/chunks/117-52ac802fe9d60ebb.js",
+      "static/chunks/main-app-124940f796c09890.js",
+      "static/chunks/app/panel/teslimatlar/page-7908d8e6aa70fba6.js"
+    ]
+  }
+}

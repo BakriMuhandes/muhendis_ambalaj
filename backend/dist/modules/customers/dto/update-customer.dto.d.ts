@@ -1,0 +1,9 @@
+export declare class UpdateCustomerDto {
+    customerCode?: string;
+    fullName?: string;
+    phone?: string;
+    email?: string;
+    address?: string;
+    notes?: string;
+    isActive?: boolean;
+}

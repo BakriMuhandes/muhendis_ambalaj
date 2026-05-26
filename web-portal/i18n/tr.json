@@ -1,0 +1,9 @@
+{
+  "login": {
+    "title": "Musteri Girisi",
+    "subtitle": "Lutfen kullanici bilgileriniz ile giris yapin.",
+    "username": "Kullanici Adi",
+    "password": "Sifre",
+    "submit": "Giris Yap"
+  }
+}

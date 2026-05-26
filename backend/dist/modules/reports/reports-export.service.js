@@ -1,0 +1,87 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReportsExportService = void 0;
+const common_1 = require("@nestjs/common");
+const exceljs_1 = require("exceljs");
+let ReportsExportService = class ReportsExportService {
+    async createXlsx(report) {
+        const workbook = new exceljs_1.Workbook();
+        workbook.creator = 'Muhasebe Sistemi';
+        workbook.created = new Date();
+        const summarySheet = workbook.addWorksheet('Ozet');
+        summarySheet.columns = [
+            { header: 'Alan', key: 'alan', width: 30 },
+            { header: 'Deger', key: 'deger', width: 40 },
+        ];
+        summarySheet.addRows([
+            { alan: 'Musteri', deger: report.customer.fullName },
+            { alan: 'Rapor Tipi', deger: report.reportType },
+            { alan: 'Baslangic', deger: report.period.from },
+            { alan: 'Bitis', deger: report.period.to },
+            { alan: 'Toplam Borc (USD)', deger: report.totals.totalDebtUsd },
+            { alan: 'Toplam Odeme (USD)', deger: report.totals.totalPaymentUsd },
+            { alan: 'Guncel Bakiye (USD)', deger: report.totals.balanceUsd },
+        ]);
+        const deliveriesSheet = workbook.addWorksheet('Teslimatlar');
+        deliveriesSheet.columns = [
+            { header: 'Tarih', key: 'tarih', width: 14 },
+            { header: 'Teslimat No', key: 'teslimatNo', width: 20 },
+            { header: 'Urun', key: 'urun', width: 28 },
+            { header: 'Boyut', key: 'boyut', width: 14 },
+            { header: 'Miktar', key: 'miktar', width: 12 },
+            { header: 'Birim Fiyat (USD)', key: 'birimFiyat', width: 18 },
+            { header: 'Toplam (USD)', key: 'toplam', width: 16 },
+        ];
+        for (const delivery of report.deliveries) {
+            for (const item of delivery.items) {
+                deliveriesSheet.addRow({
+                    tarih: delivery.transactionDate.toISOString().slice(0, 10),
+                    teslimatNo: delivery.id,
+                    urun: item.productName,
+                    boyut: item.productSize || '-',
+                    miktar: Number(item.quantity),
+                    birimFiyat: Number(item.unitPriceUsd),
+                    toplam: Number(item.lineTotalUsd),
+                });
+            }
+        }
+        const paymentsSheet = workbook.addWorksheet('Odemeler');
+        paymentsSheet.columns = [
+            { header: 'Tarih', key: 'tarih', width: 14 },
+            { header: 'Tutar (USD)', key: 'tutar', width: 16 },
+            { header: 'Kur Para Birimi', key: 'kurPb', width: 16 },
+            { header: 'Kur', key: 'kur', width: 12 },
+            { header: 'Karsilik Tutar', key: 'karsilik', width: 16 },
+            { header: 'Yontem', key: 'yontem', width: 14 },
+            { header: 'Referans', key: 'referans', width: 20 },
+            { header: 'Not', key: 'not', width: 28 },
+        ];
+        for (const payment of report.payments) {
+            paymentsSheet.addRow({
+                tarih: payment.paymentDate.toISOString().slice(0, 10),
+                tutar: Number(payment.amountUsd),
+                kurPb: payment.exchangeCurrency || '-',
+                kur: payment.exchangeRate ? Number(payment.exchangeRate) : '',
+                karsilik: payment.amountExchange ? Number(payment.amountExchange) : '',
+                yontem: payment.paymentMethod,
+                referans: payment.referenceNo || '-',
+                not: payment.note || '-',
+            });
+        }
+        for (const ws of [summarySheet, deliveriesSheet, paymentsSheet]) {
+            ws.getRow(1).font = { bold: true };
+        }
+        return workbook.xlsx.writeBuffer();
+    }
+};
+ReportsExportService = __decorate([
+    (0, common_1.Injectable)()
+], ReportsExportService);
+exports.ReportsExportService = ReportsExportService;
+//# sourceMappingURL=reports-export.service.js.map

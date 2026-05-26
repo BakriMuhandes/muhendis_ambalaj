@@ -1,0 +1,9 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/giris/page": "app/giris/page.js",
+  "/page": "app/page.js",
+  "/panel/page": "app/panel/page.js",
+  "/panel/odemeler/page": "app/panel/odemeler/page.js",
+  "/panel/raporlar/page": "app/panel/raporlar/page.js",
+  "/panel/teslimatlar/page": "app/panel/teslimatlar/page.js"
+}
