@@ -9,7 +9,6 @@ import { PaymentsModule } from './modules/payments/payments.module';
 import { ProductMemoriesModule } from './modules/product-memories/product-memories.module';
 import { ReportsModule } from './modules/reports/reports.module';
 import { PortalModule } from './modules/portal/portal.module';
-import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 
 @Module({
