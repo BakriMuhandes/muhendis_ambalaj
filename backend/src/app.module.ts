@@ -11,12 +11,6 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { PortalModule } from './modules/portal/portal.module';
 import { AppController } from './app.controller';
 
-@Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [],
-})
-export class AppModule {}
 
 @Module({
   imports: [
@@ -30,6 +24,8 @@ export class AppModule {}
     ProductMemoriesModule,
     ReportsModule,
     PortalModule,
+    AppController,
+    
   ],
 })
 export class AppModule {}
