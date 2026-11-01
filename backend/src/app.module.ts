@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { AppController } from './app.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { CustomerAuthModule } from './modules/customer-auth/customer-auth.module';
 import { CustomersModule } from './modules/customers/customers.module';
@@ -9,7 +10,6 @@ import { PaymentsModule } from './modules/payments/payments.module';
 import { ProductMemoriesModule } from './modules/product-memories/product-memories.module';
 import { ReportsModule } from './modules/reports/reports.module';
 import { PortalModule } from './modules/portal/portal.module';
-
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ import { PortalModule } from './modules/portal/portal.module';
     ProductMemoriesModule,
     ReportsModule,
     PortalModule,
-    
   ],
+  controllers: [AppController],
 })
 export class AppModule {}
